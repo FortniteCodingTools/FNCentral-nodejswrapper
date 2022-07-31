@@ -10,7 +10,7 @@ async function getAes(version: string): Promise<Aes> {
   let reqversion;
   if (version) {
     const parsedNumber = parseFloat(version)
-    if (parsedNumber != NaN && parsedNumber > 0 && parsedNumber < 100) {
+    if (parsedNumber && parsedNumber > 0 && parsedNumber < 100) {
       reqversion = parsedNumber.toFixed(2);;
     } else throw new Error("Invalid Version Submitted")
   }

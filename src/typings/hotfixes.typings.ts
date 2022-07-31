@@ -1,9 +1,9 @@
 export interface Hotfixes {
-    "": Object
-    CosmeticSets: Object
-    CrewTileDetails: Object
-    GameSubModule: Object
-    FortSetting: Object
-    CreditsDataTable: Object
-    "Fort.Game": Object
+    "": object
+    CosmeticSets: object
+    CrewTileDetails: object
+    GameSubModule: object
+    FortSetting: object
+    CreditsDataTable: object
+    "Fort.Game": object
 }
