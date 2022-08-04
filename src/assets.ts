@@ -16,7 +16,7 @@ async function getAssets() : Promise<Assets> {
  */
 async function getAssetsFromPak(pak : string): Promise<Assets> {
     if(!pak) throw new Error("Please provide a pak number")
-    const parsed = parseInt(pak)
+    const parsed = Number(pak)
     if(!parsed) throw new Error("Please provide a valid pak number")
     const req = await axios.get(`https://fortnitecentral.gmatrixgames.ga/api/v1/assets/dynamic/${pak}`, {
     
