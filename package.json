@@ -1,6 +1,6 @@
 {
   "name": "fncentral-nodejswrapper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "FortniteCentral API Nodejs Wrapper",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
