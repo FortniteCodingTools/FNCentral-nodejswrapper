@@ -6,7 +6,7 @@ import { Aes } from "./typings/aes.typings";
  * @param version Version to get AES from
  * @returns AES for the version, pak keys and pak info
  */
-async function getAes(version: string): Promise<Aes> {
+async function getAes(version? : string): Promise<Aes> {
   let reqversion;
   if (version) {
     const parsedNumber = parseFloat(version)
