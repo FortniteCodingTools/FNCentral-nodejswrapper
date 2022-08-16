@@ -12,4 +12,5 @@ export interface Mapping {
 export interface Meta {
   version: string
   compressionMethod: "Oodle" | "None"
+  platform : "Android" | "Windows"
 }

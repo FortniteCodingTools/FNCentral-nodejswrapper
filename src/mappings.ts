@@ -6,7 +6,7 @@ import { Mappings } from "./typings/mappings.typings";
  * @param version Version to get mappings for
  * @returns Mappings object with url to download
  */
-async function getMappings(version?: string): Promise<Mappings> {
+async function getMappings(version?: string, platform? : "Android" | "Windows" | "all"): Promise<Mappings> {
   let reqversion;
   if (version) {
     const parsedNumber = parseFloat(version)
@@ -16,7 +16,8 @@ async function getMappings(version?: string): Promise<Mappings> {
   }
   const data = await axios.get("https://fortnitecentral.gmatrixgames.ga/api/v1/mappings", {
     params : {
-        version : reqversion
+        version : reqversion,
+        platform
     }
   })
   .catch(err => {
