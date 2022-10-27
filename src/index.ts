@@ -1,8 +1,6 @@
-import getAes from "./aes"
-import getMappings from "./mappings"
-import getHotfixes from "./hotfixes"
-import { getAssets, getAssetsFromPak, exportPath } from "./assets"
+export { default as getAes } from "./aes"
+export { default as getMappings } from "./mappings"
+export { default as getHotfixes } from "./hotfixes"
+export { getAssets, getAssetsFromPak, exportPath } from "./assets"
 
-const API_VERSION = 1;
-
-export { getAes, getMappings, getHotfixes, getAssets, getAssetsFromPak, exportPath, API_VERSION }
+export const API_VERSION = 1;

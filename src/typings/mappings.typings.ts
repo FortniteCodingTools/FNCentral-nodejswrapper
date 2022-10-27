@@ -1,4 +1,8 @@
-export type Mappings = Mapping[]
+export interface Meta {
+  version: string
+  compressionMethod: "Oodle" | "None"
+  platform: "Android" | "Windows"
+}
 
 export interface Mapping {
   url: string
@@ -9,8 +13,4 @@ export interface Mapping {
   meta: Meta
 }
 
-export interface Meta {
-  version: string
-  compressionMethod: "Oodle" | "None"
-  platform : "Android" | "Windows"
-}
+export type Mappings = Mapping[]
