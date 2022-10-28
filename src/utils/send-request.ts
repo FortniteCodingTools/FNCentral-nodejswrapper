@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-
-const version = '1.3.0';
+import { version } from '../../package.json';
 
 export default async <ResultType extends any>(url: string, params: Record<string, any> | null = null, method = 'GET', additionalOptions: AxiosRequestConfig<any> = {}): Promise<ResultType> => {
   const headers = {
