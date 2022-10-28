@@ -1,5 +1,5 @@
-export type Assets = [];
+export type Assets = string[];
 
 export interface Exports {
-    jsonOutput : object[]
+  jsonOutput: object[]
 }
