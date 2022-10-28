@@ -1,31 +1,26 @@
-import axios from "axios";
 import { Mappings } from "./typings/mappings.typings";
+import endpoints from './utils/endpoints';
+import formatVersion from './utils/format-version';
+import sendRequest from './utils/send-request';
 
 /**
  * Get the current or past mappings
  * @param version Version to get mappings for
  * @returns Mappings object with url to download
  */
-async function getMappings(version?: string, platform? : "Android" | "Windows" | "all"): Promise<Mappings> {
+async function getMappings(version?: string, platform?: "Android" | "Windows" | "all"): Promise<Mappings> {
   let reqversion;
+
   if (version) {
-    const parsedNumber = parseFloat(version)
-    if (parsedNumber && parsedNumber > 0 && parsedNumber < 100) {
-      reqversion = parsedNumber.toFixed(2);;
-    } else throw new Error("Invalid Version Submitted")
+    reqversion = formatVersion(version);
   }
-  const data = await axios.get("https://fortnitecentral.gmatrixgames.ga/api/v1/mappings", {
-    params : {
-        version : reqversion,
-        platform
-    }
-  })
-  .catch(err => {
-    if(err.status) throw new Error("Version not found")
-    else throw new Error(err)
-  })
-  if(!data) throw new Error("Uncatched error")
-  return data.data
+
+  const data = await sendRequest<Mappings>(endpoints.Mappings, {
+    version: reqversion,
+    platform,
+  });
+
+  return data;
 }
 
 export default getMappings
